@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="time">0</h1>
+    <button class="btn">click</button>
+
+    <script>
+        let time = document.querySelector(".time")
+        let btn = document.querySelector(".btn")
+
+        let click = true
+        let count = 0
+       // let count1 = 10
+
+        btn.addEventListener("click",()=>{
+            if (click === true) {
+               let inter = setInterval(() => {
+                    count++
+                    time.innerHTML = count
+                    console.log(count)
+                    if (count==10) {
+                        clearInterval(inter)
+                        //btn.disabled = false
+                    }
+                    btn
+                }, 300);
+                click = false
+               // btn.disabled = true
+            }
+            else{
+                
+               let inter = setInterval(() => {
+                    count--
+                    time.innerHTML = count
+                    console.log(count)
+                    if (count==1) {
+                        clearInterval(inter)
+                       // btn.disabled = false
+                    }
+
+                }, );
+                click = true
+               // btn.disabled = true
+            }
+        })
+        
+    </script>
+</body>
+</html>
